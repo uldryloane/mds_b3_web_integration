@@ -10,7 +10,9 @@ Exercice d'introduction au module d'intégration web
 6. _Optionnel_ : proposez un rendu responsive pour la mise en page initiale, puis intégrez-la à l'aide de KNACSS
 
 ## Mise en page
+![mise en page](site_layout.png)
 
+_source : webflow.com_
 
 ## Liens utiles
 - Guide de mise en page CSS sur MDN : https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout
