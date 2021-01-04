@@ -11,4 +11,7 @@ Exercice d'introduction au module d'intégration web
 
 ## Mise en page
 
-## Liens utiles 
+
+## Liens utiles
+- Guide de mise en page CSS sur MDN : https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout
+- Cheatsheet KNACSS : https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf
