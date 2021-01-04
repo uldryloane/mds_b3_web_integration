@@ -1,1 +1,9 @@
 /* Votre feuille de style à compléter */
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
