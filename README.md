@@ -16,4 +16,7 @@ _source : webflow.com_
 
 ## Liens utiles
 - Guide de mise en page CSS sur MDN : https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout
+- Introduction à Flexbox sur MDN : https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout
+- Introduction à Grid sur MDN : https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout
+- Comparatif Flexbox et Grid sur MDN : https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout/Mod%C3%A8le_de_grille_et_autres_mod%C3%A8les_de_disposition
 - Cheatsheet KNACSS : https://www.knacss.com/assets/pdf/knacss7-cheatsheet.pdf
