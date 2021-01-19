@@ -62,31 +62,66 @@ nav a:hover {
 
 aside{
   display: flex;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 10%;
+  margin-top: 2%;
+  margin:auto;
+  max-width: 960px;
 }
 
 #Photo{
   margin-top: 5px;
-  width: 600px;
-  height: 400px; 
   background-color: rgb(180, 180, 180);
   display:flex;
+  width: 50%;
+  height: 100%;
 }
 
 h1{
   margin-left: 30px;
   background-color: gray;
   height: 30px;
-  width: 600px;
+  width: 200px;
   text-align: center;
+  border-radius: 5px;
 }
 
 p{
+  margin-top: 100px;
+  margin-left: 630px;
   justify-content: left;
-  background-color: gray;
-  height: 30px;
+  background-color: rgb(207, 207, 207);
+  height: 300px;
   width: 600px;
-  padding: 40%;
+  position: absolute;
+
 }
+
+section {
+  justify-content: space-between;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: center;
+  position: absolute;
+  margin-top: 200px;
+}
+
+article {
+
+  width: 300px;
+  height: 350px;
+  background-color: #AAA;
+  justify-content: space-between;
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  max-width: 960px;
+
+}
+
+h2 {
+  color:blue;
+  margin-top:140%;
+}
+
+  
 
