@@ -3,42 +3,240 @@
 <head>
   <title>Intégration web - J1</title>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="style.css">
-</head
-<body role="document">
+  <style>
+@media screen and (min-width:400px) and (max-width:1204px) {
+  
+  div.container{
+    grid-template-columns: 1fr 1fr;
+  }
+  div.footer{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+}
+@media screen and (max-width: 400px) {
+        header, nav, aside.top {
+          flex-direction: column;
+}
+#grid_container.container{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+        nav {
+          order: 1;
+        }
+
+        #header_home {
+          order: 2
+        }
+
+        aside.top > * {
+          width: calc(100% - 20px) !important;
+          margin: 0 10px !important;
+        }
+    }
+
+    body {
+      max-width: 960px;
+      margin: auto;
+    }
+
+    header {
+      background-color: #DEDEDE;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #header_home {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #333;
+      display: flex;
+      color: white;
+      font-size: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav a {
+      text-decoration: none;
+      background-color: #AAA;
+      width: 100px;
+      height: 30px;
+      margin: 5px;
+      color: white;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: blue;
+    }
+
+
+
+.top {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap :10px;
+  grid-gap :30px;
+  height: 350px;
+  margin-bottom :30px;
+}
+
+.img_container{
+grid-column: 1;
+grid-row: 1;
+width: 100%;
+height: 100%;
+}
+
+.block_right {
+  grid-column: 2/2;
+  grid-row: 1;
+}
+
+
+
+.img_container img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      margin-top: 10px;
+
+    }
+
+.container {
+  display : grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(160px, 1fr) minmax(160px, 1fr);
+  grid-gap :10px;
+}
+
+
+
+.footer{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap :70px;
+  margin-top :70px;
+  font-size: small;
+  background-color: gray;
+  padding: 3%;
+  }
+
 
  
-<header style ="height: 50px ;">
-<a href="/" id="header_home">Home</a>
-<nav>
-  <a href="/" id="Lien">lien1</a>
-  <a href="/" id="Lien">lien2</a>
-  <a href="/" id="Lien">lien3</a>
-</nav>
-</header>
+  </style>
+</head>
+<body role="document">
+  <h1>Intégration web - Exercice d'introduction</h1>
 
-<aside>
-<img src="images/montagne.jpg" id="Photo" />
-<h1>TITRE</h1>
-<p>paragraphe</p>
-</aside>
+  <header>
+    <a href="/" id="header_home">Home</a>
+    <nav>
+      <a href="#">Lien 1</a>
+      <a href="#">Lien 2</a>
+      <a href="#">Lien 3</a>
+    </nav>
+  </header>
 
-<section>
-  <article>
-  <img src="images/montagne.jpg" id="image" />
-  <h2>TITRE1</h2>
-</article>
+  <aside class="top">
+    <div class="img_container"><img src="anomalocaris.jpg" alt="anomalocaris"/></div>
+    <div class="block_right">
+      <h2>Titre aside</h2>
+      <p>Paragraphe aside avec des phrases. Paragraphe aside avec des phrases. Paragraphe aside avec des phrases.
+        Paragraphe aside avec des phrases.</p>
+    </div>
+  </aside>
+
+  <section>
+    <div id="mongrid" class="container">
 <article>
-  <img src="images/montagne.jpg" id="image" />
-  <h2>TITRE2</h2>
-</article>
+  <div class="img_container">
+  <img src ="photo.jpg"alt="photo"></div>
+  <h2> Titre 1 </h2>
+  <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
+</article> 
+
 <article>
-  <img src="images/montagne.jpg" id="image" />
-  <h2>TITRE3</h2>
+  <div id="mongrid" class="img_container">
+  <img src ="photo.jpg"alt="photo"></div>
+  <h2> Titre 2 </h2>
+  <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
 </article>
-</section>
+
+<article>
+  <div id="grid_container" class="img_container">
+  <img src ="photo.jpg"alt="photo"></div>
+  <h2> Titre 3 </h2>
+  <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
+</article>
+
+<article>
+  <div id="grid_container" class="img_container">
+  <img src ="photo.jpg"alt="photo"></div>
+  <h2> Titre 4 </h2>
+  <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
+</article> 
+
+<article>
+  <div id="grid_container" class="img_container">
+  <img src ="photo.jpg"alt="photo"></div>
+  <h2> Titre 5 </h2>
+  <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
+</article>
+
+<article>
+  <div id="grid_container" class="img_container">
+  <img src ="photo.jpg"alt="photo"></div>
+  <h2> Titre 6 </h2>
+  <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
+</article>
+   
 
 
+</div>
+ </section>
 
+ <footer>
+ <div class="footer">
+
+  <div class="contact">
+    <h4> Nom </h4>
+    <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
+  </div>
+
+  <div class="contact">
+    <h4> Nom </h4>
+    <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
+  </div>
+
+  <div class="contact">
+    <h4> Nom </h4>
+    <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
+  </div>
+
+  <div class="contact">
+    <h4> Nom </h4>
+    <a href="a"></a>
+    <p>petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,petit texte,</p>
+  </div>
+
+ </footer>
 </body>
 </html>
