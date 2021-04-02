@@ -1,0 +1,3244 @@
+@charset "UTF-8";
+/*!
+* www.KNACSS.com v7.1.3 (february, 12 2020) @author: Alsacreations, Raphael Goetter
+* Licence WTFPL http://www.wtfpl.net/
+*/
+/* ----------------------------- */
+/* ==Table Of Content            */
+/* ----------------------------- */
+/*
+1- Reboot (basic reset)
+2- Libraries  :
+  - Base
+  - Print
+  - Layout (alignment, modules, positionning)
+  - Utilities (width and spacers helpers)
+  - Responsive helpers
+  - WordPress reset (disabled by default)
+  - Grillade (Grid System)
+3- Components :
+  - Media object
+  - Skip Links for accessibility
+  - Tables
+  - Forms
+  - Buttons
+  - Checkbox
+  - Tabs
+  - Tags
+  - Badges
+  - Alerts
+*/
+/* line 1, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* line 7, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+/* line 20, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+/* line 35, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+/* line 39, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+/* line 45, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* line 50, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* line 55, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+  cursor: help;
+  border-bottom: 0;
+}
+
+/* line 64, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+/* line 70, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* line 77, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+/* line 84, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+dt {
+  font-weight: 700;
+}
+
+/* line 88, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0;
+}
+
+/* line 93, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+blockquote {
+  margin: 0 0 1rem;
+}
+
+/* line 97, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 101, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 106, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 110, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+/* line 118, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+sub {
+  bottom: -.25em;
+}
+
+/* line 122, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+sup {
+  top: -.5em;
+}
+
+/* line 126, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+/* line 133, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* line 138, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 143, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 148, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}
+
+/* line 152, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* line 160, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+
+/* line 167, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+figure {
+  margin: 0 0 1rem;
+}
+
+/* line 171, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+/* line 176, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 180, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+a,
+area,
+button,
+[role="button"],
+input:not([type="range"]),
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+/* line 193, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+table {
+  border-collapse: collapse;
+}
+
+/* line 197, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+caption {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #868e96;
+  text-align: left;
+  caption-side: bottom;
+}
+
+/* line 205, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+th {
+  text-align: inherit;
+}
+
+/* line 209, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+/* line 214, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+button {
+  border-radius: 0;
+}
+
+/* line 218, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+/* line 223, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* line 234, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+button,
+input {
+  overflow: visible;
+}
+
+/* line 239, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 244, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* line 251, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+/* line 259, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+input[type="radio"],
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox;
+}
+
+/* line 272, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/* line 277, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* line 284, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+}
+
+/* line 296, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+progress {
+  vertical-align: baseline;
+}
+
+/* line 300, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* line 305, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+[type="search"] {
+  outline-offset: -2px;
+  -webkit-appearance: none;
+}
+
+/* line 310, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 315, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+/* line 320, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+output {
+  display: inline-block;
+}
+
+/* line 324, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+summary {
+  display: list-item;
+}
+
+/* line 328, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+template {
+  display: none;
+}
+
+/* line 332, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_vendor/_reboot.scss */
+[hidden] {
+  display: none !important;
+}
+
+/* ----------------------------- */
+/* ==Base (basic styles)         */
+/* ----------------------------- */
+/* disable animations styles when reduced rotion is enabled */
+@media (prefers-reduced-motion: reduce) {
+  /* line 7, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* switching to border-box model for all elements */
+/* line 14, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 18, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  /* avoid min-width: auto on flex and grid children */
+  min-width: 0;
+  min-height: 0;
+}
+
+/* line 27, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+html {
+  /* set base font-size to equiv "10px", which is adapted to rem unit */
+  font-size: 62.5%;
+  /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+  font-size: calc(1em * 0.625);
+}
+
+/* line 34, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+body {
+  margin: 0;
+  font-size: 1.4rem;
+  background-color: #fff;
+  color: #212529;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+@media (min-width: 576px) {
+  /* line 34, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+/* Links */
+/* line 44, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+a {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* line 48, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+a:focus, a:hover, a:active {
+  color: #0d0d0d;
+  text-decoration: underline;
+}
+
+/* Headings */
+/* line 57, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+h1, .h1-like {
+  font-size: 2.8rem;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  /* line 57, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+  h1, .h1-like {
+    font-size: 3.2rem;
+  }
+}
+
+/* line 65, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+h2, .h2-like {
+  font-size: 2.4rem;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  /* line 65, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+  h2, .h2-like {
+    font-size: 2.8rem;
+  }
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+h3, .h3-like {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  /* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+  h3, .h3-like {
+    font-size: 2.4rem;
+  }
+}
+
+/* line 78, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+h4, .h4-like {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  /* line 78, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+  h4, .h4-like {
+    font-size: 2rem;
+  }
+}
+
+/* line 83, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+h5, .h5-like {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  /* line 83, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+  h5, .h5-like {
+    font-size: 1.8rem;
+  }
+}
+
+/* line 88, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+h6, .h6-like {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  /* line 88, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+  h6, .h6-like {
+    font-size: 1.6rem;
+  }
+}
+
+/* Vertical rythm */
+/* line 94, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dd {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* line 105, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+p,
+address,
+ol,
+ul,
+dl,
+blockquote,
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Avoid margins on nested elements */
+/* line 117, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+li p,
+li .p-like,
+li ul,
+li ol,
+ol ol,
+ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Max values */
+/* line 128, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video,
+svg {
+  max-width: 100%;
+}
+
+/* line 141, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+img {
+  height: auto;
+}
+
+/* Styling elements */
+/* line 146, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+ul,
+ol {
+  padding-left: 2em;
+}
+
+/* line 151, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+img {
+  vertical-align: middle;
+}
+
+/* line 155, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+em,
+.italic,
+address,
+cite,
+i,
+var {
+  font-style: italic;
+}
+
+/* line 164, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+code,
+kbd,
+mark {
+  border-radius: 2px;
+}
+
+/* line 170, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+kbd {
+  padding: 0 2px;
+  border: 1px solid #999;
+}
+
+/* line 175, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+pre {
+  tab-size: 2;
+}
+
+/* line 179, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+code {
+  padding: 2px 4px;
+  background: rgba(0, 0, 0, 0.04);
+  color: #b11;
+}
+
+/* line 185, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+pre code {
+  padding: 0;
+  background: none;
+  color: inherit;
+  border-radius: 0;
+}
+
+/* line 192, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+mark {
+  padding: 2px 4px;
+}
+
+/* line 196, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+sup,
+sub {
+  vertical-align: 0;
+}
+
+/* line 201, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+sup {
+  bottom: 1ex;
+}
+
+/* line 205, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+sub {
+  top: 0.5ex;
+}
+
+/* line 209, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+blockquote {
+  position: relative;
+  padding-left: 3em;
+  min-height: 2em;
+}
+
+/* line 215, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+blockquote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: georgia, serif;
+  font-size: 5em;
+  height: .4em;
+  line-height: .9;
+  color: #e7e9ed;
+}
+
+/* line 227, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+blockquote > footer {
+  margin-top: .75em;
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* line 232, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+blockquote > footer::before {
+  content: "\2014 \0020";
+}
+
+/* line 237, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+q {
+  font-style: normal;
+}
+
+/* line 241, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+q,
+.q {
+  quotes: "“" "”" "‘" "’";
+}
+
+/* line 245, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+q:lang(fr),
+.q:lang(fr) {
+  quotes: "«\00a0" "\00a0»" "“" "”";
+}
+
+/* line 250, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+hr {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin: 1em 0 2em;
+  padding: 0;
+  border: 0;
+  color: #ccc;
+  background-color: #ccc;
+}
+
+/* line 261, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+blockquote,
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 267, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_base.scss */
+code,
+pre,
+samp,
+kbd {
+  white-space: pre-wrap;
+  font-family: consolas, courier, monospace;
+  line-height: normal;
+}
+
+/* ----------------------------- */
+/* ==Print (quick print reset)   */
+/* ----------------------------- */
+@media print {
+  /* line 6, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  /* line 12, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  body {
+    width: auto;
+    margin: auto;
+    font-family: serif;
+    font-size: 12pt;
+  }
+  /* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  p,
+  .p-like,
+  h1,
+  .h1-like,
+  h2,
+  .h2-like,
+  h3,
+  .h3-like,
+  h4,
+  .h4-like,
+  h5,
+  .h5-like,
+  h6,
+  .h6-like,
+  blockquote,
+  label,
+  ul,
+  ol {
+    color: #000;
+    margin: auto;
+  }
+  /* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  .print {
+    display: block;
+  }
+  /* line 45, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  .no-print {
+    display: none;
+  }
+  /* no orphans, no widows */
+  /* line 50, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  p,
+  .p-like,
+  blockquote {
+    orphans: 3;
+    widows: 3;
+  }
+  /* no breaks inside these elements */
+  /* line 58, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  blockquote,
+  ul,
+  ol {
+    page-break-inside: avoid;
+  }
+  /* page break before main headers
+  h1,
+  .h1-like {
+    page-break-before: always;
+  }
+  */
+  /* no breaks after these elements */
+  /* line 72, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  h1,
+  .h1-like,
+  h2,
+  .h2-like,
+  h3,
+  .h3-like,
+  caption {
+    page-break-after: avoid;
+  }
+  /* line 82, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  a {
+    color: #000;
+  }
+  /* displaying URLs
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+  */
+  /* line 94, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_print.scss */
+  a[href^="javascript:"]::after,
+  a[href^="#"]::after {
+    content: "";
+  }
+}
+
+/* ----------------------------- */
+/* ==Global Micro Layout         */
+/* ----------------------------- */
+/* Flexbox layout is KNACSS choice
+http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
+*/
+/* line 9, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-container, .flex-container--row,
+.flex-row, .flex-container--column,
+.flex-column, .flex-container--row-reverse,
+.flex-row-reverse, .flex-container--column-reverse,
+.flex-column-reverse,
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 15, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-container--row,
+.flex-row {
+  flex-direction: row;
+}
+
+/* line 21, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-container--column,
+.flex-column {
+  flex-direction: column;
+}
+
+/* line 27, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-container--row-reverse,
+.flex-row-reverse {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* line 34, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-container--column-reverse,
+.flex-column-reverse {
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-item-fluid,
+.item-fluid {
+  flex: 1 1 0%;
+}
+
+/* line 46, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-item-first,
+.item-first {
+  order: -1;
+}
+
+/* line 51, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-item-medium,
+.item-medium {
+  order: 0;
+}
+
+/* line 56, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-item-last,
+.item-last {
+  order: 1;
+}
+
+/* line 61, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_layout.scss */
+.flex-item-center,
+.item-center,
+.mr-auto {
+  margin: auto;
+}
+
+/* ---------------------------------- */
+/* ==Helpers                          */
+/* ---------------------------------- */
+/* Typo Helpers  */
+/* ------------- */
+/* line 8, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-bold {
+  font-weight: 700;
+}
+
+/* line 12, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-italic {
+  font-style: italic;
+}
+
+/* line 16, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-normal {
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 21, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+/* line 25, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-lowercase {
+  text-transform: lowercase;
+}
+
+/* line 29, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-smaller {
+  font-size: 0.6em;
+}
+
+/* line 33, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-small {
+  font-size: 0.8em;
+}
+
+/* line 37, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-big {
+  font-size: 1.2em;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-bigger {
+  font-size: 1.5em;
+}
+
+/* line 45, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-biggest {
+  font-size: 2em;
+}
+
+/* line 49, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-txt-wrap {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* line 55, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.u-txt-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* text and contents alignment */
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.txtleft,
+.u-txt-left {
+  text-align: left;
+}
+
+/* line 67, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.txtright,
+.u-txt-right {
+  text-align: right;
+}
+
+/* line 72, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.txtcenter,
+.u-txt-center {
+  text-align: center;
+}
+
+/* blocks that need to be placed under floats */
+/* line 96, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.clear,
+.u-clear {
+  clear: both;
+}
+
+/* blocks that must contain floats */
+/* line 105, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.clearfix::after,
+.u-clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+  border-collapse: collapse;
+}
+
+/* simple blocks alignment */
+/* line 115, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.left,
+.u-left {
+  margin-right: auto;
+}
+
+/* line 120, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.right,
+.u-right {
+  margin-left: auto;
+}
+
+/* line 125, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.center,
+.u-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Global Micro Layout */
+/* ------------------- */
+/* module, gains superpower "BFC" Block Formating Context */
+/* line 136, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mod,
+.u-mod,
+.bfc,
+.u-bfc {
+  overflow: hidden;
+}
+
+/* floating elements */
+/* line 145, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.fl,
+.u-fl {
+  float: left;
+}
+
+/* line 150, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+img.fl,
+img.u-fl {
+  margin-right: 1rem;
+}
+
+/* line 155, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.fr,
+.u-fr {
+  float: right;
+}
+
+/* line 160, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+img.fr,
+img.u-fr {
+  margin-left: 1rem;
+}
+
+/* line 165, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+img.fl,
+img.fr,
+img.u-fl,
+img.u-fr {
+  margin-bottom: 0.5rem;
+}
+
+/* inline-block */
+/* line 174, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.inbl,
+.u-inbl {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* State Helpers */
+/* ------------- */
+/* invisible for all */
+/* line 184, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.is-hidden,
+.js-hidden,
+[hidden] {
+  display: none;
+}
+
+/* hidden but not for an assistive technology like a screen reader, Yahoo! method */
+/* line 191, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.visually-hidden, .tabs-content-item[aria-hidden="true"] {
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+
+/* line 201, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.is-disabled,
+.js-disabled,
+[disabled],
+.is-disabled ~ label,
+[disabled] ~ label {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+  filter: grayscale(1);
+}
+
+/* line 212, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+ul.is-unstyled, ul.unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 219, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.color--inverse {
+  color: #fff;
+}
+
+/* Width Helpers */
+/* ------------- */
+/* blocks widths (percentage and pixels) */
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w100 {
+  width: 100%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w95 {
+  width: 95%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w90 {
+  width: 90%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w85 {
+  width: 85%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w80 {
+  width: 80%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w75 {
+  width: 75%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w70 {
+  width: 70%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w65 {
+  width: 65%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w60 {
+  width: 60%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w55 {
+  width: 55%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w50 {
+  width: 50%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w45 {
+  width: 45%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w40 {
+  width: 40%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w35 {
+  width: 35%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w30 {
+  width: 30%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w25 {
+  width: 25%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w20 {
+  width: 20%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w15 {
+  width: 15%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w10 {
+  width: 10%;
+}
+
+/* line 230, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w5 {
+  width: 5%;
+}
+
+/* line 235, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w66 {
+  width: calc(100% / 3 * 2);
+}
+
+/* line 238, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w33 {
+  width: calc(100% / 3);
+}
+
+/* line 244, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.wauto {
+  width: auto;
+}
+
+/* line 248, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w960p {
+  width: 960px;
+}
+
+/* line 252, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mw960p {
+  max-width: 960px;
+}
+
+/* line 256, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w1140p {
+  width: 1140px;
+}
+
+/* line 260, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mw1140p {
+  max-width: 1140px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w1000p {
+  width: 1000px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w950p {
+  width: 950px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w900p {
+  width: 900px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w850p {
+  width: 850px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w800p {
+  width: 800px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w750p {
+  width: 750px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w700p {
+  width: 700px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w650p {
+  width: 650px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w600p {
+  width: 600px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w550p {
+  width: 550px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w500p {
+  width: 500px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w450p {
+  width: 450px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w400p {
+  width: 400px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w350p {
+  width: 350px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w300p {
+  width: 300px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w250p {
+  width: 250px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w200p {
+  width: 200px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w150p {
+  width: 150px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w100p {
+  width: 100px;
+}
+
+/* line 265, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.w50p {
+  width: 50px;
+}
+
+/* Spacing Helpers */
+/* --------------- */
+/* line 274, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.man,
+.ma0 {
+  margin: 0;
+}
+
+/* line 279, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pan,
+.pa0 {
+  padding: 0;
+}
+
+/* line 284, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mas {
+  margin: 1rem;
+}
+
+/* line 288, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mam {
+  margin: 2rem;
+}
+
+/* line 292, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mal {
+  margin: 4rem;
+}
+
+/* line 296, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pas {
+  padding: 1rem;
+}
+
+/* line 300, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pam {
+  padding: 2rem;
+}
+
+/* line 304, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pal {
+  padding: 4rem;
+}
+
+/* line 308, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mtn,
+.mt0 {
+  margin-top: 0;
+}
+
+/* line 313, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mts {
+  margin-top: 1rem;
+}
+
+/* line 317, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mtm {
+  margin-top: 2rem;
+}
+
+/* line 321, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mtl {
+  margin-top: 4rem;
+}
+
+/* line 325, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mrn,
+.mr0 {
+  margin-right: 0;
+}
+
+/* line 330, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mrs {
+  margin-right: 1rem;
+}
+
+/* line 334, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mrm {
+  margin-right: 2rem;
+}
+
+/* line 338, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mrl {
+  margin-right: 4rem;
+}
+
+/* line 342, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mbn,
+.mb0 {
+  margin-bottom: 0;
+}
+
+/* line 347, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mbs {
+  margin-bottom: 1rem;
+}
+
+/* line 351, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mbm {
+  margin-bottom: 2rem;
+}
+
+/* line 355, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mbl {
+  margin-bottom: 4rem;
+}
+
+/* line 359, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mln,
+.ml0 {
+  margin-left: 0;
+}
+
+/* line 364, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mls {
+  margin-left: 1rem;
+}
+
+/* line 368, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mlm {
+  margin-left: 2rem;
+}
+
+/* line 372, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mll {
+  margin-left: 4rem;
+}
+
+/* line 376, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mauto {
+  margin: auto;
+}
+
+/* line 380, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mtauto {
+  margin-top: auto;
+}
+
+/* line 384, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mrauto {
+  margin-right: auto;
+}
+
+/* line 388, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mbauto {
+  margin-bottom: auto;
+}
+
+/* line 392, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.mlauto {
+  margin-left: auto;
+}
+
+/* line 396, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.ptn,
+.pt0 {
+  padding-top: 0;
+}
+
+/* line 401, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pts {
+  padding-top: 1rem;
+}
+
+/* line 405, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.ptm {
+  padding-top: 2rem;
+}
+
+/* line 409, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.ptl {
+  padding-top: 4rem;
+}
+
+/* line 413, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.prn,
+.pr0 {
+  padding-right: 0;
+}
+
+/* line 418, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.prs {
+  padding-right: 1rem;
+}
+
+/* line 422, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.prm {
+  padding-right: 2rem;
+}
+
+/* line 426, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.prl {
+  padding-right: 4rem;
+}
+
+/* line 430, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pbn,
+.pb0 {
+  padding-bottom: 0;
+}
+
+/* line 435, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pbs {
+  padding-bottom: 1rem;
+}
+
+/* line 439, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pbm {
+  padding-bottom: 2rem;
+}
+
+/* line 443, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pbl {
+  padding-bottom: 4rem;
+}
+
+/* line 447, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pln,
+.pl0 {
+  padding-left: 0;
+}
+
+/* line 452, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pls {
+  padding-left: 1rem;
+}
+
+/* line 456, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.plm {
+  padding-left: 2rem;
+}
+
+/* line 460, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_utilities.scss */
+.pll {
+  padding-left: 4rem;
+}
+
+/* -------------------------- */
+/* ==Responsive helpers       */
+/* -------------------------- */
+/* large screens */
+/* ------------- */
+@media (min-width: 992px) {
+  /* layouts for large screens */
+  /* line 11, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-hidden {
+    display: none !important;
+  }
+  /* line 15, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-visible {
+    display: block !important;
+  }
+  /* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-no-float {
+    float: none;
+  }
+  /* line 23, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-inbl {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  /* widths for large screens */
+  /* line 30, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-w25 {
+    width: 25% !important;
+  }
+  /* line 34, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-w33 {
+    width: 33.333333% !important;
+  }
+  /* line 38, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-w50 {
+    width: 50% !important;
+  }
+  /* line 42, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-w66 {
+    width: 66.666666% !important;
+  }
+  /* line 46, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-w75 {
+    width: 75% !important;
+  }
+  /* line 50, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-w100,
+  .large-wauto {
+    display: block !important;
+    float: none !important;
+    clear: none !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: 0;
+  }
+  /* margins for large screens */
+  /* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .large-man,
+  .large-ma0 {
+    margin: 0 !important;
+  }
+}
+
+/* medium screens */
+/* -------------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* layouts for medium screens */
+  /* line 74, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-hidden {
+    display: none !important;
+  }
+  /* line 78, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-visible {
+    display: block !important;
+  }
+  /* line 82, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-no-float {
+    float: none;
+  }
+  /* line 86, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-inbl {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  /* widths for medium screens */
+  /* line 93, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-w25 {
+    width: 25% !important;
+  }
+  /* line 97, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-w33 {
+    width: 33.333333% !important;
+  }
+  /* line 101, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-w50 {
+    width: 50% !important;
+  }
+  /* line 105, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-w66 {
+    width: 66.666666% !important;
+  }
+  /* line 109, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-w75 {
+    width: 75% !important;
+  }
+  /* line 113, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-w100,
+  .medium-wauto {
+    display: block !important;
+    float: none !important;
+    clear: none !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: 0;
+  }
+  /* margins for medium screens */
+  /* line 125, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .medium-man,
+  .medium-ma0 {
+    margin: 0 !important;
+  }
+}
+
+/* small screens */
+/* ------------- */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* layouts for small screens */
+  /* line 137, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-hidden {
+    display: none !important;
+  }
+  /* line 141, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-visible {
+    display: block !important;
+  }
+  /* line 145, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-no-float {
+    float: none;
+  }
+  /* line 149, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-inbl {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  /* widths for small screens */
+  /* line 156, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-w25 {
+    width: 25% !important;
+  }
+  /* line 160, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-w33 {
+    width: 33.333333% !important;
+  }
+  /* line 164, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-w50 {
+    width: 50% !important;
+  }
+  /* line 168, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-w66 {
+    width: 66.666666% !important;
+  }
+  /* line 172, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-w75 {
+    width: 75% !important;
+  }
+  /* line 176, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-w100,
+  .small-wauto {
+    display: block !important;
+    float: none !important;
+    clear: none !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: 0;
+  }
+  /* margins for small screens */
+  /* line 188, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-man,
+  .small-ma0 {
+    margin: 0 !important;
+  }
+  /* line 193, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .small-pan,
+  .small-pa0 {
+    padding: 0 !important;
+  }
+}
+
+/* tiny screens */
+/* ------------ */
+@media (max-width: 575px) {
+  /* quick small resolution reset */
+  /* line 206, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .mod,
+  .col,
+  fieldset {
+    display: block !important;
+    float: none !important;
+    clear: none !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: 0;
+  }
+  /* line 218, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .flex-container, .flex-container--row,
+  .flex-row, .flex-container--column,
+  .flex-column, .flex-container--row-reverse,
+  .flex-row-reverse, .flex-container--column-reverse,
+  .flex-column-reverse {
+    flex-direction: column;
+  }
+  /* layouts for tiny screens */
+  /* line 223, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-hidden {
+    display: none !important;
+  }
+  /* line 227, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-visible {
+    display: block !important;
+  }
+  /* line 231, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-no-float {
+    float: none;
+  }
+  /* line 235, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-inbl {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  /* widths for tiny screens */
+  /* line 242, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-w25 {
+    width: 25% !important;
+  }
+  /* line 246, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-w33 {
+    width: 33.333333% !important;
+  }
+  /* line 250, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-w50 {
+    width: 50% !important;
+  }
+  /* line 254, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-w66 {
+    width: 66.666666% !important;
+  }
+  /* line 258, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-w75 {
+    width: 75% !important;
+  }
+  /* line 262, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-w100,
+  .tiny-wauto {
+    display: block !important;
+    float: none !important;
+    clear: none !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: 0;
+  }
+  /* margins for tiny screens */
+  /* line 274, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-man,
+  .tiny-ma0 {
+    margin: 0 !important;
+  }
+  /* line 279, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/_responsive.scss */
+  .tiny-pan,
+  .tiny-pa0 {
+    padding: 0 !important;
+  }
+}
+
+/* --------------------------------------- */
+/* ==Grillade : ultra light Grid System    */
+/* --------------------------------------- */
+@media (min-width: 480px) {
+  /* line 16, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*=" grid-"],
+  [class^="grid-"] {
+    display: grid;
+    grid-auto-flow: dense;
+  }
+  /* line 30, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*=" grid-"].has-gutter,
+  [class^="grid-"].has-gutter {
+    grid-gap: 1rem;
+  }
+  /* line 30, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*=" grid-"].has-gutter-l,
+  [class^="grid-"].has-gutter-l {
+    grid-gap: 2rem;
+  }
+  /* line 30, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*=" grid-"].has-gutter-xl,
+  [class^="grid-"].has-gutter-xl {
+    grid-gap: 4rem;
+  }
+}
+
+@media (min-width: 480px) {
+  /* line 38, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  .autogrid,
+  .grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+  /* line 53, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  .autogrid.has-gutter,
+  .grid.has-gutter {
+    grid-column-gap: 1rem;
+  }
+  /* line 53, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  .autogrid.has-gutter-l,
+  .grid.has-gutter-l {
+    grid-column-gap: 2rem;
+  }
+  /* line 53, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  .autogrid.has-gutter-xl,
+  .grid.has-gutter-xl {
+    grid-column-gap: 4rem;
+  }
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-2"] {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-3"] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-4"] {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-5"] {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-6"] {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-7"] {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-8"] {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-9"] {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-10"] {
+  grid-template-columns: repeat(10, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-11"] {
+  grid-template-columns: repeat(11, 1fr);
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="grid-12"] {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-1"] {
+  grid-column: auto/span 1;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-1"] {
+  grid-row: auto/span 1;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-2"] {
+  grid-column: auto/span 2;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-2"] {
+  grid-row: auto/span 2;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-3"] {
+  grid-column: auto/span 3;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-3"] {
+  grid-row: auto/span 3;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-4"] {
+  grid-column: auto/span 4;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-4"] {
+  grid-row: auto/span 4;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-5"] {
+  grid-column: auto/span 5;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-5"] {
+  grid-row: auto/span 5;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-6"] {
+  grid-column: auto/span 6;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-6"] {
+  grid-row: auto/span 6;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-7"] {
+  grid-column: auto/span 7;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-7"] {
+  grid-row: auto/span 7;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-8"] {
+  grid-column: auto/span 8;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-8"] {
+  grid-row: auto/span 8;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-9"] {
+  grid-column: auto/span 9;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-9"] {
+  grid-row: auto/span 9;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-10"] {
+  grid-column: auto/span 10;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-10"] {
+  grid-row: auto/span 10;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-11"] {
+  grid-column: auto/span 11;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-11"] {
+  grid-row: auto/span 11;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="col-12"] {
+  grid-column: auto/span 12;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+[class*="row-12"] {
+  grid-row: auto/span 12;
+}
+
+/* intermediate breakpoints */
+@media (min-width: 480px) and (max-width: 767px) {
+  /* line 83, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*="grid-"][class*="-small-1"] {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* line 87, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*="col-"][class*="-small-1"] {
+    grid-column: auto/span 1;
+  }
+  /* line 83, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*="grid-"][class*="-small-2"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* line 87, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*="col-"][class*="-small-2"] {
+    grid-column: auto/span 2;
+  }
+  /* line 83, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*="grid-"][class*="-small-3"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* line 87, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*="col-"][class*="-small-3"] {
+    grid-column: auto/span 3;
+  }
+  /* line 83, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*="grid-"][class*="-small-4"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  /* line 87, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*="col-"][class*="-small-4"] {
+    grid-column: auto/span 4;
+  }
+  /* line 92, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+  [class*="-small-all"] {
+    grid-column: 1 / -1;
+  }
+}
+
+/* line 98, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+.item-first {
+  order: -1;
+}
+
+/* line 102, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+.item-last {
+  order: 1;
+}
+
+/* line 107, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+.grid-offset {
+  visibility: hidden;
+}
+
+/* line 112, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+.col-all {
+  grid-column: 1 / -1;
+}
+
+/* line 116, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_library/grillade-grid.scss */
+.row-all {
+  grid-row: 1 / -1;
+}
+
+/* ----------------------------- */
+/* ==Media object                */
+/* ----------------------------- */
+/* recommended HTML : <div class="media"><img class="media-figure"><div class="media-content"></div></div> */
+/* see http://codepen.io/raphaelgoetter/pen/KMWWwj */
+@media (min-width: 480px) {
+  /* line 8, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_media.scss */
+  .media {
+    display: flex;
+    align-items: flex-start;
+  }
+  /* line 12, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_media.scss */
+  .media-content {
+    flex: 1 1 0%;
+  }
+  /* line 17, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_media.scss */
+  .media-figure--center {
+    align-self: center;
+  }
+  /* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_media.scss */
+  .media--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* ----------------------------- */
+/* ==skip links                  */
+/* ----------------------------- */
+/* see https://www.alsacreations.com/article/lire/572-Les-liens-d-evitement.html */
+/* styling skip links */
+/* line 7, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_skip-links.scss */
+.skip-links {
+  position: absolute;
+}
+
+/* line 10, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_skip-links.scss */
+.skip-links a {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0.5em;
+  background: black;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_skip-links.scss */
+.skip-links a:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+}
+
+/* ----------------------------- */
+/* ==Tables                      */
+/* ----------------------------- */
+/* line 5, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tables.scss */
+table,
+.table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  vertical-align: top;
+  margin-bottom: 2rem;
+}
+
+/* line 15, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tables.scss */
+.table {
+  display: table;
+  border: 1px solid #acb3c2;
+  background: transparent;
+}
+
+/* line 21, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tables.scss */
+.table--zebra tbody tr:nth-child(odd) {
+  background: #e7e9ed;
+}
+
+/* line 26, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tables.scss */
+.table caption {
+  caption-side: bottom;
+  padding: 1rem;
+  color: #333;
+  font-style: italic;
+  text-align: right;
+}
+
+/* line 34, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tables.scss */
+.table td,
+.table th {
+  padding: 0.3rem 0.6rem;
+  min-width: 2rem;
+  vertical-align: top;
+  border: 1px #acb3c2 dotted;
+  text-align: left;
+  cursor: default;
+}
+
+/* line 44, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tables.scss */
+.table thead {
+  color: #212529;
+  background: transparent;
+}
+
+/* line 50, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tables.scss */
+.table--auto {
+  table-layout: auto;
+}
+
+/* ----------------------------- */
+/* ==Forms                       */
+/* ----------------------------- */
+/* thanks to HTML5boilerplate and https://shoelace.style/ */
+/* forms items */
+/* line 7, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+form,
+fieldset {
+  border: none;
+}
+
+/* line 12, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+fieldset {
+  padding: 2rem;
+}
+
+/* line 15, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+fieldset legend {
+  padding: 0 0.5rem;
+  border: 0;
+  white-space: normal;
+}
+
+/* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* line 27, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="submit"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: 0;
+  box-shadow: 0 0 0 1px #333 inset;
+  color: #212529;
+  vertical-align: middle;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  transition: 0.25s;
+  transition-property: box-shadow, background-color, color, border;
+  appearance: none;
+}
+
+/* line 56, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 62, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+input[readonly] {
+  background-color: #e7e9ed;
+}
+
+/* line 66, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+select {
+  padding-right: 2rem;
+  border-radius: 0;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%2011.966%20L%203.523%205.589%20C%202.464%204.627%200.495%206.842%201.505%207.771%20L%201.505%207.771%20L%208.494%2014.763%20C%209.138%2015.35%2010.655%2015.369%2011.29%2014.763%20L%2011.29%2014.763%20L%2018.49%207.771%20C%2019.557%206.752%2017.364%204.68%2016.262%205.725%20L%2016.262%205.725%20L%209.96%2011.966%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+  background-position: right .6rem center;
+  background-repeat: no-repeat;
+  background-size: 1.2rem;
+}
+
+/* hiding IE11 arrow */
+/* line 76, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+select::-ms-expand {
+  display: none;
+}
+
+/* line 80, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+textarea {
+  min-height: 5em;
+  vertical-align: top;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+
+/* 'x' appears on right of search input when text is entered. This removes it */
+/* line 89, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+[type="search"]::-webkit-search-decoration, [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-results-button, [type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* line 97, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+::-webkit-input-placeholder {
+  color: #777;
+}
+
+/* line 101, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #777;
+}
+
+/* line 106, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+input::placeholder,
+textarea::placeholder {
+  color: #777;
+}
+
+/* line 111, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_forms.scss */
+progress {
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* ----------------------------- */
+/* ==Buttons                     */
+/* ----------------------------- */
+/* preferably use <button> for buttons !*/
+/* use .btn-- or .button-- classes for variants */
+/* line 7, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn,
+.button,
+[type="button"],
+button, .btn--primary,
+.button--primary, .btn--success,
+.button--success, .btn--info,
+.button--info, .btn--warning,
+.button--warning, .btn--danger,
+.button--danger, .btn--inverse,
+.button--inverse, .btn--ghost,
+.button--ghost {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.25s;
+  transition-property: box-shadow, background-color, color, border;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #212529;
+  border: none;
+  border-radius: 0;
+  background-color: #e7e9ed;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+}
+
+/* line 33, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn:focus,
+.button:focus,
+[type="button"]:focus,
+button:focus {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--primary,
+.button--primary {
+  background-color: #13d5d8;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 47, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--primary:active, .btn--primary:focus, .btn--primary:hover,
+.button--primary:active,
+.button--primary:focus,
+.button--primary:hover {
+  background-color: #0fa7a9;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--success,
+.button--success {
+  background-color: #2a5c03;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 47, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--success:active, .btn--success:focus, .btn--success:hover,
+.button--success:active,
+.button--success:focus,
+.button--success:hover {
+  background-color: #132b01;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--info,
+.button--info {
+  background-color: #130ede;
+  color: #000;
+  box-shadow: none;
+}
+
+/* line 47, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--info:active, .btn--info:focus, .btn--info:hover,
+.button--info:active,
+.button--info:focus,
+.button--info:hover {
+  background-color: #0f0bae;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--warning,
+.button--warning {
+  background-color: #F0AD4E;
+  color: #000;
+  box-shadow: none;
+}
+
+/* line 47, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--warning:active, .btn--warning:focus, .btn--warning:hover,
+.button--warning:active,
+.button--warning:focus,
+.button--warning:hover {
+  background-color: #ec971f;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--danger,
+.button--danger {
+  background-color: #D9534F;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 47, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--danger:active, .btn--danger:focus, .btn--danger:hover,
+.button--danger:active,
+.button--danger:focus,
+.button--danger:hover {
+  background-color: #c9302c;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--inverse,
+.button--inverse {
+  background-color: #333;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 47, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--inverse:active, .btn--inverse:focus, .btn--inverse:hover,
+.button--inverse:active,
+.button--inverse:focus,
+.button--inverse:hover {
+  background-color: #1a1a1a;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--ghost,
+.button--ghost {
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 0 1px #fff inset;
+}
+
+/* line 47, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--ghost:active, .btn--ghost:focus, .btn--ghost:hover,
+.button--ghost:active,
+.button--ghost:focus,
+.button--ghost:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* line 59, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--small,
+.button--small {
+  padding: 0.7rem 1rem;
+  font-size: .8em;
+}
+
+/* line 64, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--big,
+.button--big {
+  padding: 1.5rem 2rem;
+  font-size: 1.4em;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--block,
+.button--block {
+  width: 100% !important;
+  display: block;
+}
+
+/* line 74, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--unstyled,
+.button--unstyled {
+  padding: 0;
+  border: none;
+  text-align: left;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 85, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.btn--unstyled:focus,
+.button--unstyled:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* line 96, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.nav-button {
+  padding: 0;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 104, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.nav-button > * {
+  display: inline-flex;
+  vertical-align: top;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 2.6rem;
+  width: 2.6rem;
+  padding: 0;
+  background-color: transparent;
+  background-image: linear-gradient(#333, #333);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 100% 5px;
+  transition: .25s;
+  transition-property: transform, background;
+  will-change: transform, background;
+}
+
+/* line 123, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.nav-button > *::before, .nav-button > *::after {
+  content: "";
+  height: 5px;
+  background: #333;
+  transition: .25s;
+  transition-property: transform, top;
+  will-change: transform, top;
+}
+
+/* line 135, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.nav-button:hover > * {
+  background-color: transparent;
+}
+
+/* line 140, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.nav-button:focus {
+  outline: 0;
+}
+
+/* line 145, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.nav-button.is-active > * {
+  background-image: none;
+  justify-content: center;
+}
+
+/* line 149, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.nav-button.is-active > *::before {
+  transform: translateY(50%) rotate3d(0, 0, 1, 45deg);
+}
+
+/* line 153, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_buttons.scss */
+.nav-button.is-active > *::after {
+  transform: translateY(-50%) rotate3d(0, 0, 1, -45deg);
+}
+
+/* ----------------------------- */
+/* ==Checkbox, radio, switch     */
+/* ----------------------------- */
+/* use .checkbox class on input type=checkbox */
+/* recommended HTML : <input type="checkbox" class="checkbox" id="c1"><label for="c1">click here</label> */
+/* use .radio class on input type=radio */
+/* recommended HTML : <input type="radio" class="radio" name="radio" id="r1"><label for="r1">Click here</label> */
+/* use .switch class on input type=checkbox */
+/* line 12, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.checkbox {
+  border-radius: 4px;
+}
+
+/* line 16, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.switch {
+  border-radius: 3em;
+}
+
+/* line 20, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.radio {
+  border-radius: 50%;
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.switch,
+.checkbox,
+.radio {
+  appearance: none;
+  vertical-align: text-bottom;
+  outline: 0;
+  cursor: pointer;
+}
+
+/* line 32, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.switch ~ label,
+.checkbox ~ label,
+.radio ~ label {
+  cursor: pointer;
+}
+
+/* line 36, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.switch::-ms-check,
+.checkbox::-ms-check,
+.radio::-ms-check {
+  display: none;
+}
+
+/* line 42, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.switch {
+  width: 4rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 70%;
+  box-shadow: inset -2rem 0 0 #333, inset 0 0 0 1px #333;
+  transition: box-shadow .15s;
+  background-color: #fff;
+}
+
+/* line 51, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.switch::before, .switch::after {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* line 56, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.switch::before {
+  content: "✕";
+  float: right;
+  margin-right: 0.66667rem;
+}
+
+/* line 61, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.switch:checked {
+  box-shadow: inset 2rem 0 0 #2a5c03, inset 0 0 0 1px #2a5c03;
+}
+
+/* line 64, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.switch:checked::before {
+  content: "✓";
+  float: left;
+  margin-left: 0.66667rem;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  box-shadow: inset 0 0 0 1px #333;
+  background-color: #fff;
+  transition: background-color .15s;
+}
+
+/* line 79, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.checkbox:checked {
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220%22%20y%3D%220%22%20viewBox%3D%220%200%208%208%22%20enable-background%3D%22new%200%200%208%208%22%20xml%3Aspace%3D%22preserve%22%3E%20%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M6.4%2C1L5.7%2C1.7L2.9%2C4.5L2.1%2C3.7L1.4%2C3L0%2C4.4l0.7%2C0.7l1.5%2C1.5l0.7%2C0.7l0.7-0.7l3.5-3.5l0.7-0.7L6.4%2C1L6.4%2C1z%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #333;
+}
+
+/* line 97, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.radio {
+  width: 2rem;
+  height: 2rem;
+  background-size: 0% 0%;
+  transition: background-size .15s;
+  box-shadow: inset 0 0 0 1px #333;
+  background-color: #fff;
+}
+
+/* line 104, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_checkbox.scss */
+.radio:checked {
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20version%3D%221.1%22%20width%3D%22100%22%20height%3D%22100%22%0AviewBox%3D%220%200%2080%2080%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2240%22%20r%3D%2224%22%20style%3D%22fill%3A%23333333%22/%3E%3C/svg%3E");
+  background-size: 90% 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+
+/* ----------------------------- */
+/* ==Tabs                        */
+/* ----------------------------- */
+/* see example on https://knacss.com/styleguide.html#tabs */
+/* NOTE : tabs need JavaScript to be activated */
+/* line 7, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tabs.scss */
+.tabs-menu {
+  border-bottom: 2px solid #e7e9ed;
+}
+
+/* line 10, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tabs.scss */
+.tabs-menu-link {
+  display: block;
+  margin-bottom: -2px;
+  padding: 0.5rem 3rem;
+  border-bottom: 4px solid transparent;
+  color: #212529;
+  background: transparent;
+  text-decoration: none;
+  border-radius: 0 0 0 0;
+  transition: .25s;
+  transition-property: color, border, background-color;
+}
+
+/* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tabs.scss */
+.tabs-menu-link.is-active {
+  border-bottom-color: #333;
+  color: #333;
+  background: transparent;
+  outline: 0;
+}
+
+/* line 29, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tabs.scss */
+.tabs-menu-link:focus {
+  border-bottom-color: #333;
+  color: #333;
+  outline: 0;
+}
+
+@media (min-width: 576px) {
+  /* line 10, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tabs.scss */
+  .tabs-menu-link {
+    display: inline-block;
+  }
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tabs.scss */
+.tabs-content-item {
+  padding-top: 1rem;
+}
+
+/* line 44, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tabs.scss */
+.tabs-content-item[aria-hidden="true"] {
+  visibility: hidden;
+}
+
+/* line 49, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tabs.scss */
+.tabs-content-item[aria-hidden="false"] {
+  visibility: visible;
+}
+
+/* ----------------------------- */
+/* ==Arrows                      */
+/* ----------------------------- */
+/* see https://knacss.com/styleguide.html#arrows */
+/* line 6, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_arrows.scss */
+[class*="icon-arrow--"] {
+  vertical-align: middle;
+}
+
+/* line 9, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_arrows.scss */
+[class*="icon-arrow--"]::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-size: cover;
+  background-color: #000;
+  line-height: 1;
+}
+
+/* line 20, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_arrows.scss */
+.icon-arrow--down::after {
+  mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%2011.966%20L%203.523%205.589%20C%202.464%204.627%200.495%206.842%201.505%207.771%20L%201.505%207.771%20L%208.494%2014.763%20C%209.138%2015.35%2010.655%2015.369%2011.29%2014.763%20L%2011.29%2014.763%20L%2018.49%207.771%20C%2019.557%206.752%2017.364%204.68%2016.262%205.725%20L%2016.262%205.725%20L%209.96%2011.966%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_arrows.scss */
+.icon-arrow--up::after {
+  mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%208.596%20L%203.523%2014.973%20C%202.464%2015.935%200.495%2013.72%201.505%2012.791%20L%201.505%2012.791%20L%208.494%205.799%20C%209.138%205.212%2010.655%205.193%2011.29%205.799%20L%2011.29%205.799%20L%2018.49%2012.791%20C%2019.557%2013.809%2017.364%2015.882%2016.262%2014.837%20L%2016.262%2014.837%20L%209.96%208.596%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+}
+
+/* line 28, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_arrows.scss */
+.icon-arrow--right::after {
+  mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%2011.685%2010.321%20L%205.308%2016.758%20C%204.346%2017.817%206.561%2019.786%207.49%2018.776%20L%207.49%2018.776%20L%2014.482%2011.787%20C%2015.069%2011.142%2015.088%209.626%2014.482%208.991%20L%2014.482%208.991%20L%207.49%201.791%20C%206.472%200.724%204.399%202.916%205.444%204.019%20L%205.444%204.019%20L%2011.685%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+}
+
+/* line 32, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_arrows.scss */
+.icon-arrow--left::after {
+  mask-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%208.315%2010.321%20L%2014.692%2016.758%20C%2015.654%2017.817%2013.439%2019.786%2012.51%2018.776%20L%2012.51%2018.776%20L%205.518%2011.787%20C%204.931%2011.142%204.912%209.626%205.518%208.991%20L%205.518%208.991%20L%2012.51%201.791%20C%2013.528%200.724%2015.601%202.916%2014.556%204.019%20L%2014.556%204.019%20L%208.315%2010.321%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
+}
+
+/* ----------------------------- */
+/* ==Tags                      */
+/* ----------------------------- */
+/* use .tag-- classes for variants */
+/* line 6, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag, .tag--primary, .tag--success, .tag--info, .tag--warning, .tag--danger, .tag--inverse, .tag--ghost {
+  display: inline-block;
+  padding: 3px 0.5rem;
+  vertical-align: baseline;
+  white-space: nowrap;
+  color: #212529;
+  border-radius: 0;
+  background-color: #e7e9ed;
+  line-height: 1;
+}
+
+/* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--primary {
+  background-color: #13d5d8;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--success {
+  background-color: #2a5c03;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--info {
+  background-color: #130ede;
+  color: #000;
+  box-shadow: none;
+}
+
+/* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--warning {
+  background-color: #F0AD4E;
+  color: #000;
+  box-shadow: none;
+}
+
+/* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--danger {
+  background-color: #D9534F;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--inverse {
+  background-color: #333;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 19, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--ghost {
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 0 1px #fff inset;
+}
+
+/* line 30, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--small {
+  font-size: 1.2rem;
+}
+
+/* line 34, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--big {
+  font-size: 2rem;
+}
+
+/* line 38, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag--block {
+  width: 100% !important;
+  display: block;
+}
+
+/* line 43, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag.disabled, .disabled.tag--primary, .disabled.tag--success, .disabled.tag--info, .disabled.tag--warning, .disabled.tag--danger, .disabled.tag--inverse, .disabled.tag--ghost, .tag--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* line 49, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_tags.scss */
+.tag:empty, .tag--primary:empty, .tag--success:empty, .tag--info:empty, .tag--warning:empty, .tag--danger:empty, .tag--inverse:empty, .tag--ghost:empty {
+  display: none;
+}
+
+/* ----------------------------- */
+/* ==Badges                      */
+/* ----------------------------- */
+/* use .badge-- classes for variants */
+/* line 6, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge, .badge--primary, .badge--success, .badge--info, .badge--warning, .badge--danger, .badge--inverse, .badge--ghost {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: #212529;
+  background-color: #e7e9ed;
+  line-height: 1;
+}
+
+/* line 14, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge::before, .badge--primary::before, .badge--success::before, .badge--info::before, .badge--warning::before, .badge--danger::before, .badge--inverse::before, .badge--ghost::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 100%;
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge--primary {
+  background-color: #13d5d8;
+  color: #fff;
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge--success {
+  background-color: #2a5c03;
+  color: #fff;
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge--info {
+  background-color: #130ede;
+  color: #000;
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge--warning {
+  background-color: #F0AD4E;
+  color: #000;
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge--danger {
+  background-color: #D9534F;
+  color: #fff;
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge--inverse {
+  background-color: #333;
+  color: #fff;
+}
+
+/* line 24, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge--ghost {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* line 34, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge--small {
+  font-size: 1.2rem;
+}
+
+/* line 38, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge--big {
+  font-size: 2rem;
+}
+
+/* line 42, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge.disabled, .disabled.badge--primary, .disabled.badge--success, .disabled.badge--info, .disabled.badge--warning, .disabled.badge--danger, .disabled.badge--inverse, .disabled.badge--ghost, .badge--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* line 48, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_badges.scss */
+.badge:empty, .badge--primary:empty, .badge--success:empty, .badge--info:empty, .badge--warning:empty, .badge--danger:empty, .badge--inverse:empty, .badge--ghost:empty {
+  display: none;
+}
+
+/* ----------------------------- */
+/* ==Alerts                      */
+/* ----------------------------- */
+/* use .alert-- classes for variants */
+/* line 6, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert, .alert--primary, .alert--success, .alert--info, .alert--warning, .alert--danger, .alert--inverse, .alert--ghost {
+  padding: 1rem 1rem;
+  margin-top: 0.75em;
+  margin-bottom: 0;
+  color: #212529;
+  border-radius: 0;
+  background-color: #e7e9ed;
+}
+
+/* line 14, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert a, .alert--primary a, .alert--success a, .alert--info a, .alert--warning a, .alert--danger a, .alert--inverse a, .alert--ghost a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--primary {
+  background-color: #13d5d8;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--success {
+  background-color: #2a5c03;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--info {
+  background-color: #130ede;
+  color: #000;
+  box-shadow: none;
+}
+
+/* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--warning {
+  background-color: #F0AD4E;
+  color: #000;
+  box-shadow: none;
+}
+
+/* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--danger {
+  background-color: #D9534F;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--inverse {
+  background-color: #333;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* line 22, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--ghost {
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 0 1px #fff inset;
+}
+
+/* line 33, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--small {
+  font-size: 1.2rem;
+}
+
+/* line 37, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--big {
+  font-size: 2rem;
+}
+
+/* line 41, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert--block {
+  width: 100% !important;
+  display: block;
+}
+
+/* line 46, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert.disabled, .disabled.alert--primary, .disabled.alert--success, .disabled.alert--info, .disabled.alert--warning, .disabled.alert--danger, .disabled.alert--inverse, .disabled.alert--ghost, .alert--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* line 52, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/components/_alerts.scss */
+.alert:empty, .alert--primary:empty, .alert--success:empty, .alert--info:empty, .alert--warning:empty, .alert--danger:empty, .alert--inverse:empty, .alert--ghost:empty {
+  display: none;
+}
+
+/* line 1, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_main.scss */
+h1 {
+  border: 1px solid #130ede;
+}
+
+/* line 6, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_main.scss */
+section button {
+  border-radius: 15px !important;
+}
+
+/* line 9, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_main.scss */
+section button.btn--primary {
+  font-size: 22px;
+}
+
+/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/knacss.scss */
+header {
+  background-color: #868e96;
+}
+
+/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/knacss.scss */
+.align-center {
+  align-items: center;
+}
+
+/* line 77, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/knacss.scss */
+footer {
+  background-color: #868e96;
+  color: white;
+}
+
+/*# sourceMappingURL=knacss.css.map */
