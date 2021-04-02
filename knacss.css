@@ -462,7 +462,7 @@ body {
   font-size: 1.4rem;
   background-color: #fff;
   color: #212529;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: Courier New, Comic Sans MS, serif;
   line-height: 1.5;
 }
 
@@ -3225,20 +3225,30 @@ section button.btn--primary {
   font-size: 22px;
 }
 
-/* line 69, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/knacss.scss */
+/* line 1, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_mes_style.scss */
 header {
   background-color: #868e96;
 }
 
-/* line 73, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/knacss.scss */
+/* line 5, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_mes_style.scss */
+footer {
+  background-color: #868e96;
+  color: white;
+}
+
+/* line 10, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_mes_style.scss */
 .align-center {
   align-items: center;
 }
 
-/* line 77, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/knacss.scss */
-footer {
-  background-color: #868e96;
-  color: white;
+/* line 15, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_mes_style.scss */
+.bg--primary {
+  background-color: #13d5d8;
+}
+
+/* line 18, ../../../../../Users/utilisateur/Documents/mds_b3_web_integration-main/mds_b3_web_integration/sass/_mes_style.scss */
+.bg--warning {
+  background-color: #D9534F;
 }
 
 /*# sourceMappingURL=knacss.css.map */

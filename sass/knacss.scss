@@ -34,6 +34,7 @@
 
 // WARNING : you should comment the following @import (variables)
 // and move variables file from knacss folder to your own project folder!
+@import "_mes_variables";
 @import "_config/variables";
 
 @import "_config/mixins";
@@ -65,16 +66,10 @@
 
 @import "main";
 
+//mon CSS
+@import "_mes_style.scss"
 
-header {
-  background-color: #868e96;
-}
 
-.align-center {
-  align-items: center;
-}
 
-footer {
-  background-color: #868e96;
-  color:white;
-}
+
+
